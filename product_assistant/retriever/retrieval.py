@@ -23,7 +23,8 @@ class Retriever:
         self.retriever = None
     
     def _load_env_variables(self):
-        """_summary_
+        """
+        Load and validate required environment variables.
         """
         load_dotenv()
          
