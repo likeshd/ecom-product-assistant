@@ -27,4 +27,4 @@ ecomm-assistant = "ecom_prod_assistant.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["product_assistant"]
-include = ["ecomm_prod_assistant*"]
+include = ["ecom_prod_assistant*"]

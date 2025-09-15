@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 import sys
 from pathlib import Path
 
-# Add the project root to the Python path for direct script execution
-project_root = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(project_root))
+# # Add the project root to the Python path for direct script execution
+# project_root = Path(__file__).resolve().parents[2]
+# sys.path.insert(0, str(project_root))
 
 class Retriever:
     def __init__(self):
@@ -53,7 +53,7 @@ class Retriever:
                 namespace=self.db_keyspace,
                 )
         if not self.retriever:
-            top_k = self.config["retriever"]["top_k"] if "retriever" in self.config else 3
+            top_k = self.config["retriever"]["top_k"] if "retriever" in self.config else 2
             retriever=self.vstore.as_retriever(search_kwargs={"k": top_k})
             print("Retriever loaded successfully.")
             return retriever
@@ -67,8 +67,8 @@ class Retriever:
     
 if __name__=='__main__':
     retriever_obj = Retriever()
-    user_query = "Can you suggest good budget laptops?"
+    user_query = "hi, dont know what to ask"
     results = retriever_obj.call_retriever(user_query)
 
     for idx, doc in enumerate(results, 1):
-        print(f"Result {idx}: {doc.page_content}\nMetadata: {doc.metadata}\n")
+        print(f"Resultnum {idx}: {doc.page_content}\nMetadata: {doc.metadata}\n")
