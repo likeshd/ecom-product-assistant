@@ -111,7 +111,7 @@ if __name__=='__main__':
     retrieved_contexts = [_format_docs(doc) for doc in retrieved_docs]
     
     #this is not an actual output this have been written to test the pipeline
-    response="iphone 16 plus, iphone 16, iphone 15 are best phones under 1,00,000 INR."
+    response="what are best phones under 1,00,000 INR."
     
     context_score = evaluate_context_precision(user_query,response,retrieved_contexts)
     relevancy_score = evaluate_response_relevancy(user_query,response,retrieved_contexts)
